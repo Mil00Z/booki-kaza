@@ -1,22 +1,24 @@
+import {Link} from 'react-router-dom'
 
-import Image from "next/image";
-import Link from "next/link";
+import Navigation from '@components/Navigation/Navigation.jsx';
 
-import NavigationTest from "@/components/ui/navigation/Navigation";
+import logo from '@assets/kasa-logo.svg'
 
-import '@/styles/layouts/header.scss'
-
-
+ 
 const Header = () => {
 
+
   return (
-
-    <header>
-      <Image className="dark:invert" src="/next.svg" alt="Next.js logo" width={180} height={38} priority/>  
-      <NavigationTest/>
+    <header id="header" className='banner-header skeleton'>
+      <>
+        <Link to='/' aria-label="Lien Accueil du site Kasa" tabIndex="0">
+        <img src={logo} alt="Logo du site Kasa" />
+        </Link>
+        <Navigation />
+      </>
     </header>
-    
-
   )
+
 }
+
 export default Header
