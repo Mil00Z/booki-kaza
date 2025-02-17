@@ -1,58 +1,54 @@
-'use client';
+// 'use client';
 
-import Link from "next/link";
+// import Link from "next/link";
 
 
-import '@/styles/components/Navigation.scss'
+// import '@/styles/components/Navigation.scss'
 
-const NavigationTest = () => {
 
-  const Links = [
-    {
-      name: "Home",
-      path: "/",
-      pageClasses: "flex items-center gap-2 hover:underline hover:underline-offset-4"},
-    {
-      name: "Next Demo",
-      path: "/next-demo", 
-      pageClasses: "flex items-center gap-2 hover:underline hover:underline-offset-4"},
-    {
-      name: "Counter",
-      path: "/counter",
-      pageClasses: "flex items-center gap-2 hover:underline hover:underline-offset-4"
-    },
-    {
-      name: "About",
-      path: "/about",
-      pageClasses: "flex items-center gap-2 hover:underline hover:underline-offset-4"
-    },
-  ]
+// const NavigationTest = () => {
+
+//   const MenuLinks = [
+//     {
+//       label: "Home",
+//       href: "/",
+//       pageClasses: "flex items-center gap-2 hover:underline hover:underline-offset-4"},
+//     {
+//       label: "Next Demo",
+//       href: "/next-demo", 
+//       pageClasses: "flex items-center gap-2 hover:underline hover:underline-offset-4"},
+//     {
+//       label: "Counter",
+//       href: "/counter",
+//       pageClasses: "flex items-center gap-2 hover:underline hover:underline-offset-4"
+//     },
+//     {
+//       label: "About",
+//       href: "/about",
+//       pageClasses: "flex items-center gap-2 hover:underline hover:underline-offset-4"
+//     },
+//     {
+//       label: "Annonce",
+//       href: "/annonce/:id",
+//       pageClasses: "flex items-center gap-2 hover:underline hover:underline-offset-4"
+//     }
+//   ]
 
   
-  return (
+//   return (
 
-    <nav className="main-nav flex gap-5 items-end flex-row md:flex-col">
+//     <nav className="main-nav flex gap-5 items-end flex-row md:flex-col">
 
 
-      {Links.map((link) => {
+//         {MenuLinks.map((link) => {
 
-        return (<Link key={`nav-${link.name}`} href={link.path} className={link.pageClasses}>{link.name}</Link>)
-        })
-      
-      }
-           
-         {/* <Link
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="/">Home</Link>
-          <Link
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="/next-demo">Next Demo</Link>
-           <Link
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="/counter">Counter</Link> */}
+//           return (<Link key={`nav-${link.label}`} href={link.href} className={link.pageClasses}>{link.label}</Link>)
+//           })
         
-       </nav>
+//         }
+           
+//     </nav>
 
-  ) 
-}
-export default NavigationTest
+//   ) 
+// }
+// export default NavigationTest
