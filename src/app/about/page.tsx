@@ -1,9 +1,10 @@
 'use client';
 
-import HeroBanner from "@/components/ui/Hero/Hero";
-import Us from "@/components/ui/Us/Us";
+import HeroBanner from "@/ui/Hero/Hero";
+import Us from "@/ui/Us/Us";
 
-import "@/styles/pages/About.scss"
+
+import '@/styles/pages/About.scss';
 
 const About = () => {
 
