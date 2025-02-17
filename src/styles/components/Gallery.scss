@@ -1,0 +1,78 @@
+.gallery {
+  --op:.25;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height:420px;
+  border-radius:var(--radius);
+  overflow: hidden;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, var(--op));
+}
+
+.picture {
+  --op:1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: var(--op);
+  transition: opacity .12s ease-in-out; 
+
+  &.pschit {
+    --op:0;
+  }
+}
+
+
+
+.nav-pictures {
+  --sizesIcons:50px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height:auto;
+  padding: 1rem;
+  position:absolute;
+  top:50%;
+  transform: translateY(-50%);
+}
+
+
+.nav-icon > .fa-solid {
+  font-size:5rem;
+  color:var(--white-color); 
+  border-radius: 50%; 
+  cursor: pointer;
+}
+
+.nav-counter {
+  --op:.5;
+  position: absolute;
+  bottom:-14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:1rem;
+  background: rgba(255, 255, 255, var(--op));
+  color:var(--white-color);
+  font :{
+    size:1.25rem;
+    weight:var(--weight-bold);
+  }
+  border-radius: var(--radius);
+}
+
+.counter {
+  font-size:1.3rem;
+  color:var(--third-color);
+}
+
+//Effects//
+.fade {
+  width: 100%;
+  transition:var(--regTransi)
+}
+
+.fade-in {
+  opacity: 1;
+}

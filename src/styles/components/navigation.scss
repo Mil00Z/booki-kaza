@@ -1,0 +1,40 @@
+.main-nav{
+  --gap:3rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  column-gap: var(--gap);
+}
+
+.nav-link{
+  color:var(--black-color);
+  font-size:1.25rem;
+  font-weight:var(--weight-medium);
+  text-transform: uppercase;
+  position: relative;
+
+  
+  &:hover,
+  &.active {
+    color: var(--third-color);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+
+    &::after{
+      opacity: 1;
+    }
+
+    &::after{ 
+      content: "fumier";
+      position: absolute;
+      bottom: 150%;
+      left: 0;
+      display: block;
+      opacity: 0;
+      font-size:.8rem;
+      color:var(--debeug-color);
+    }
+
+  }
+
+}

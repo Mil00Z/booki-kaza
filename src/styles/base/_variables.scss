@@ -1,0 +1,50 @@
+$colors : (
+  primary-color:#FF6060,
+  second-color:var(--grey-color),
+  third-color:#535bf2,
+  grey-color:#C4C4C4,
+  black-color:#000,
+  white-color:#FFF,
+  debeug-color:#FF00FF,
+  debeug-color-alt:tomato
+);
+
+
+$fonts : (
+  body-font-family:"Montserrat,sans-serif",
+  body-font-size:1.15rem,
+  body-font-weight:400,
+  weight-regular:400,
+  weight-medium:500,
+  weight-bold:700,
+  title-font-family:var(--body-font-family),
+  title-font-size:1.125rem,
+);
+
+
+$items : (
+  cta-button-font-size:1.2rem,
+  cta-button-color:var(--white-color),
+  cta-button-weight:600,
+  cta-button-background:var(--main-color),
+  star-default-color:var(--second-color),
+  radius:5px,
+  regTransi:all .26s ease-in-out
+);
+
+
+$responsive-bk : (
+  desk-xl:1240px,
+  desk:90%,
+  tab:90%,
+  mobile:90%,
+  special-bk:fit-content
+);
+
+$breakpoints : (
+  desk-xl:1240px,
+  desk:1100px,
+  tab:768px,
+  mobile:480px,
+);
+

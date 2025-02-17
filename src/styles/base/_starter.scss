@@ -1,0 +1,323 @@
+@use './_variables.scss' as *;
+
+:root {
+  //Colors
+  @each $color-name, $color-value in $colors {
+    --#{$color-name}:#{$color-value};
+  }
+
+  //Fonts
+   @each $font-setting, $font-value in $fonts {
+    --#{$font-setting}:#{$font-value};
+  }
+
+  //Items
+  @each $item-name, $item-value in $items {
+    --#{$item-name}:#{$item-value};
+  }
+
+   //Bk
+   @each $bk-name, $bk-value in $breakpoints {
+    --#{$bk-name}:#{$bk-value};
+  }
+ 
+}
+
+  body {
+    --layout:"Desk";
+    --skeleton:1240px;
+    font-family:var(--body-font-family);
+    font-size:var(--body-font-size);
+    font-weight:var(--body-font-weight);
+    margin: 0;
+    padding: 0;
+    background-color: var(--white-color);
+  }
+
+  #root{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+
+a {
+  text-decoration: unset;
+  transition: var(--regTransi);
+
+  &:hover{
+    color: var(--third-color);
+  }
+}
+
+
+.skeleton{
+  width:var(--skeleton);
+  margin: 0 auto;
+  /* display: flex;
+  flex-direction: column;
+  height:100dvh; */
+}
+
+.content-first {
+  margin-block:auto
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+.debeug {
+  outline:4px dotted var(--debeug-color);
+  
+  &-alt{
+    outline:2px dashed var(--debeug-color-alt);
+  }
+}
+
+
+h1 {
+  font-size: 3.2rem;
+  line-height: 1.1;
+}
+
+
+
+
+
+/* MEDIA QUERIES */
+@media all and (min-width:1300px){
+
+  body {
+    --layout:"Desk-xl";
+    --skeleton:#{map-get($responsive-bk,'desk')};
+  }
+  
+}
+
+@media all and (max-width:1100px){
+
+  body {
+    --layout:"Tab";
+    --skeleton:#{map-get($responsive-bk,'tab')};
+  }
+
+  /* NAV */
+  .main-nav {
+    width:50%;
+  }
+
+  .nav-link {
+    font-size: .85rem;
+  }
+
+
+
+  /* HERO */
+  .content-first .hero .title {
+    font-size: 2rem;
+  }
+
+   /* HOME */
+   .content-first .card {
+    --sizes:290px;
+   
+    .card-title {
+      --title-font-size:1.125rem;
+      text-wrap: balance;
+    }
+
+  }
+
+  .content-first .card-description {
+    font-size:1.05rem;
+ }
+
+  .content-first .listing-section {
+    --gap:1rem;
+  }
+
+  .content-first .listing-title {
+    font-size: 1rem;
+    text-wrap: balance;
+
+    .free-spaces {
+      font-size: 1.2rem;
+    }
+  }
+
+
+}
+
+
+@media all and (max-width:600px){
+  
+  body {
+    --layout:"Mobile";
+    --skeleton:#{map-get($responsive-bk,'mobile')};
+  }
+
+  :root{
+    --line-height:1.15;
+    --title-font-size:1.15rem;
+  }
+
+ 
+
+  /* HEADER */
+  #header{
+    padding-block:1.5rem;
+  }
+
+  .main-nav {
+    width: 50%;
+  }
+
+  .banner-header a {
+    width:40%;
+  }
+  .banner-header img{
+    max-width:100%;
+    height:auto;
+  }
+
+ 
+  .main-nav {
+    --gap:1.5rem;
+  }
+
+  /* HERO */
+  .content-first .hero {
+    --radius:10px;
+    height:130px;
+  }
+
+  .content-first .hero .title {
+    padding-inline: 1rem;
+    font-size: 1.5rem;
+    text-wrap: balance;
+  }
+
+  /* HOME */
+  .content-first .listing-container {
+    justify-content: center;
+  }
+
+  .content-first .card-description {
+    font-size:1rem;
+    line-height: 1.25;
+ }
+
+  
+  /* FOOTER */
+  .banner-footer{
+    padding-block:4rem;
+  }
+
+  .banner-footer .copyright {
+    font-size: 0.875rem;
+  }
+
+  /* ANNONCE */
+  .gallery .nav-icon > i {
+    font-size:2.25rem;
+
+  }
+
+
+  .logement .product-name{
+    font-size:1.25rem;
+  }
+
+  .logement .product-name.is-booked{
+    font-size:.875rem;
+  }
+
+  .logement .product-location{
+    margin-top:.75rem;
+    font-size:.95rem;
+  }
+
+  .logement .tag {
+    font-size:.7rem;
+  }
+
+  .logement .fa-star{
+    font-size:1rem;
+  }
+
+  .logement .side-right {
+    width: 100%;
+    justify-content: space-between;
+    flex-flow:row-reverse;
+  }
+
+  .logement .star {
+    align-self: center;
+  }
+
+  .logement .side-bottom {
+     flex-wrap: wrap;
+  }
+
+  .logement .product-name {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .logement .product-panel {
+    margin-bottom: calc(2 * var(--padding-tube));
+  }
+
+  .logement .product-owner{
+    font-size:.813rem;
+  }
+
+  .logement .product-owner .thumbnail{
+    --sizes:45px;
+  }
+
+
+  /* TUBE */
+  .content-first .tube {
+    width:100%;
+  }
+
+  .content-first .tube > .title {
+    --padding-tube:.55rem;
+    font-size:.813rem;
+  }
+
+  .content-first .tube .panel-container {
+    --extraSpacing:2rem;
+    font-size:.9rem;
+  }
+
+  .content-first .tube .title > i {
+    font-size:1.5rem;
+  }
+
+  /* 404 */
+  .content-first .not-found-container {
+    --gap:4rem;
+    margin-top: var(--gap);
+  }
+  .content-first .not-found-container .title {
+    font-size:8rem;
+  }
+
+  .content-first .not-found-container .description {
+    font-size: 1.25rem;
+    text-align: center;
+    text-wrap:balance;
+  }
+
+  .content-first .not-found-container .link {
+    font-size:1rem;
+  }
+
+}
+
+

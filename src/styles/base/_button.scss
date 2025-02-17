@@ -1,0 +1,73 @@
+@use './_variables.scss' as *;
+
+
+@mixin button($type:'button'){
+  --type:#{$type};
+
+  width:fit-content;
+  padding: 0.5rem 1.25rem;
+  font :{
+      size: 1.1rem;
+      weight: 500;
+  }
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: var(--regTransi);
+
+     
+  &:hover {
+    border-color: var(--black-color);
+    background:var(--black-color)
+  }
+ 
+  &:focus,
+  &:focus-visible {
+      outline: 4px auto -webkit-focus-ring-color;
+  }
+
+    &-cta {
+     
+     
+    }
+
+    &-test {
+      --radius:0;
+      color:var(--debeug-color);
+      background-color: var(--debeug-color);
+    }
+
+    &-reserve {
+      color:var(--white-color);
+      background-color: var(--third-color);
+      
+    }
+
+    &-ok {
+      color:var(--white-color);
+      background-color: var(--primary-color);
+    }
+
+    &.booked{
+      
+      &[disabled]{
+        text-decoration: line-through;
+        background: var(--grey-color);
+        cursor: not-allowed;
+       
+      }
+
+      &:hover {
+        border-color:transparent;
+      }
+    }
+
+}
+
+
+
+.btn {
+  @include button();
+}
+ 
