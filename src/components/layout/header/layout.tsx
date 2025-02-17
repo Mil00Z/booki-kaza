@@ -1,8 +1,12 @@
-import {Link} from 'react-router-dom'
+import Link from "next/link";
+import Image from "next/image";
 
-import Navigation from '@components/Navigation/Navigation.jsx';
+import Navigation from '@/ui/Navigation/Navigation';
 
-import logo from '@assets/kasa-logo.svg'
+import logo from '@/public/kasa-logo.svg'
+
+
+import '@/styles/layouts/header.scss';
 
  
 const Header = () => {
@@ -11,8 +15,8 @@ const Header = () => {
   return (
     <header id="header" className='banner-header skeleton'>
       <>
-        <Link to='/' aria-label="Lien Accueil du site Kasa" tabIndex="0">
-        <img src={logo} alt="Logo du site Kasa" />
+        <Link href='/' aria-label="Lien Accueil du site Kasa" tabIndex="0">
+          <Image src={logo} alt="Logo du site Kasa" />
         </Link>
         <Navigation />
       </>
