@@ -1,12 +1,13 @@
+"use client";
 
+import {createContext} from 'react';
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 
-// import Header from '@/components/layout/header-test/layout';
-// import Footer from '@/components/layout/footer-test/layout';
+import Header from '@/layout/Header/layout';
+import Footer from '@/layout/Footer/layout';
 
-import Header from '@/components/layout/Header/layout';
-import Footer from '@/components/layout/Footer/layout';
+import logements from '@/data/logements.json';
 
 //Styles
 import "./globals.css";
@@ -22,30 +23,37 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Booki Kaza",
-  description: "Book your Kaza",
-};
+
+// export const metadata: Metadata = {
+//   title: "Booki Kaza",
+//   description: "Book your Kaza",
+// };
 
 
+export const DataContext = createContext(null);
 
 
 const RootLayout: React.FC<Readonly<{ children: React.ReactNode }>> = ({ children }) => {
 
   return (
 
-    <html lang="fr">
+    <DataContext.Provider value={{logements}}>
 
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <html lang="fr">
+        <body className={`${geistSans.variable} ${geistMono.variable}`}>
 
-        <Header/>
+          <Header/>
 
-        <main className="wrapper">{children}</main>
+          <main className="wrapper content-first skeleton">{children}</main>
 
-        <Footer/>
+          <Footer/>
 
-      </body>
-    </html>
+        </body>
+      </html>
+
+    </DataContext.Provider>
+
+    
 
   );
 
