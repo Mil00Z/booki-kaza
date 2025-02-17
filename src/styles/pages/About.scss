@@ -1,0 +1,36 @@
+
+.about{
+  --location:"about";
+}
+
+
+.about-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-block:2rem;
+
+}
+
+.side {
+  padding:1rem;
+}
+
+.side-form {
+  --gap:1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-basis:60%;
+  row-gap: var(--gap);
+}
+
+.input-group{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.side-prez {
+  color:var(--black-color);
+}
