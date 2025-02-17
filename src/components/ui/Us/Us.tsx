@@ -1,7 +1,7 @@
-import PanelTube from "@components/PanelTube/PanelTube"
+import PanelTube from "@/ui/PanelTube/PanelTube"
 
+import '@/styles/components/Us.scss'
 
-import '@styles/components/Us.scss'
 
 const Us = () =>{
 
