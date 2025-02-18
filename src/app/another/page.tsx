@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 
-import HeroBanner from "@/components/ui/Hero/Hero"
+import HeroBanner from "@/ui/Hero/Hero"
 
 
 const InreachableProduct = () => {  
