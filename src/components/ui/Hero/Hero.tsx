@@ -34,7 +34,7 @@ const HeroBanner = (props) => {
     <div className={`hero banner-${layout}`} style={layout === 'about' ? {backgroundImage:`url(${currentBg.src})`} :
     {backgroundImage:`linear-gradient(to right, rgba(0, 0, 0, var(--op)) 0%, rgba(0, 0, 0, var(--op)) 100%),url(${currentBg.src})`}}>
 
-    {layout === 'home' ? <h1 className="title" data-page={layout}>Chez vous, partout & ailleurs</h1> : null }
+    {layout === 'annonces' ? <h1 className="title" data-page={layout}>Chez vous, partout & ailleurs</h1> : null }
 
     </div>
 
