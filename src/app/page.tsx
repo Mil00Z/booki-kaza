@@ -12,7 +12,7 @@ import '@/styles/pages/Home.scss'
 
 function Home() {
 
-  const { logements } = useContext(DataContext);
+  // const { logements } = useContext(DataContext);
 
 
   return (
