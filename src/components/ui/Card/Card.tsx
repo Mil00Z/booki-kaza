@@ -7,6 +7,7 @@ const Card = (props) => {
 
   const {logement,bookings,setBookings,isBooked, setIsBooked} = props
 
+
   return (
 
 

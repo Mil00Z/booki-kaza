@@ -1,4 +1,4 @@
-import { useRef,useEffect } from 'react'
+import { useRef } from 'react'
 import '@/styles/components/PanelTube.scss'
 
 const PanelTube = (props) => {
@@ -6,7 +6,6 @@ const PanelTube = (props) => {
 const {details,title,description,annoncePanel} = props
 
 const contentRef = useRef(null);
-
 
 
 function handleClick(event) {
