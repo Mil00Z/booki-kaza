@@ -1,6 +1,6 @@
 "use client";
 
-import {createContext} from 'react';
+import {useState, createContext} from 'react';
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 
@@ -29,15 +29,20 @@ const geistMono = Geist_Mono({
 //   description: "Book your Kaza",
 // };
 
-
+  
 export const DataContext = createContext(null);
 
 
 const RootLayout: React.FC<Readonly<{ children: React.ReactNode }>> = ({ children }) => {
 
+ 
+const [bookings,setBookings] = useState(logements.length);
+const [isBooked, setIsBooked] = useState(false);
+
+
   return (
 
-    <DataContext.Provider value={{logements}}>
+    <DataContext.Provider value={{logements,bookings,setBookings,isBooked,setIsBooked}}>
 
       <html lang="fr">
         
