@@ -117,12 +117,22 @@ border-radius:var(--radius) ;
 .star{
   align-self: flex-end;
   margin-block:1rem;
+  // supprimer la suite quand debeug FontAwesome sera corrigé
+  display:flex;
+  column-gap: 1rem;
+
+  > span{
+
+    background: var(--debeug-color);
+
+  }
 }
 
 .fa-star {
   margin-inline:.25rem;
   color:var(--star-default-color);
   font-size:1.5rem;
+
 
   &.noted {
     color:var(--primary-color);
