@@ -1,5 +1,5 @@
-import Notes from '@/components/ui/Notes/Notes';
-import PanelTube from '@/components/ui/PanelTube/PanelTube';
+import Notes from '@/ui/Notes/Notes';
+import PanelTube from '@/ui/PanelTube/PanelTube';
 
 import '@/styles/components/Product.scss';
 
@@ -12,7 +12,7 @@ const Product = (props) => {
   function updateBooking() {
 
     setIsBooked(true);
-    setBookings(bookings - 1);
+    setBookings((bookings) => bookings - 1);
 
   }
 
