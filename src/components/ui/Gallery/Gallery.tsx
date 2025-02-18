@@ -1,4 +1,4 @@
-import { useState,useEffect,useRef } from 'react';
+import { useState } from 'react';
 
 // import Fade from '@/components/utils/fade.jsx';
 
@@ -64,12 +64,16 @@ return (
         </div>
       ) : null}
       
-    <Fade isVisible={isVisible}> 
+    {/* <Fade isVisible={isVisible}> 
 
       <img key={`picture-${currentImgIndex}`} src={pictures[currentImgIndex]} className={`picture`} data-index={currentImgIndex} alt={`photo de l'annonce - ${details.title}`} /> 
 
-    </Fade>
-    
+    </Fade> */}
+
+      
+      <img key={`picture-${currentImgIndex}`} src={pictures[currentImgIndex]} className={`picture`} data-index={currentImgIndex} alt={`photo de l'annonce - ${details.title}`} /> 
+
+  
     {(pictures.length >1) ? (
        <div className="nav-counter"> <span className="counter">{currentImgIndex + 1}</span>/{pictures.length}</div>
     ) : null}
