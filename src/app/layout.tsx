@@ -40,6 +40,7 @@ const RootLayout: React.FC<Readonly<{ children: React.ReactNode }>> = ({ childre
     <DataContext.Provider value={{logements}}>
 
       <html lang="fr">
+        
         <body className={`${geistSans.variable} ${geistMono.variable}`}>
 
           <Header/>

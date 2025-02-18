@@ -11,7 +11,6 @@ import '@/styles/layouts/header.scss';
  
 const Header = () => {
 
-
   return (
     <header id="header" className='banner-header skeleton'>
       <>
