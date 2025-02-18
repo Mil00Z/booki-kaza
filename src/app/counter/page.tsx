@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import CounterElement from "@/components/ui/counter/CounterElement";
+import CounterElement from "@/ui/counter/CounterElement";
 
 
 const CounterPage = () => {
