@@ -17,44 +17,39 @@ import '@/styles/pages/Annonce.scss'
 
 const Annonce = () => {
 
-  // const {logements, bookings, setBookings,isBooked,setIsBooked} = useOutletContext();
+  const {logements,bookings, setBookings,isBooked, setIsBooked} = useContext(DataContext);
 
-  const {logements} = useContext(DataContext);
   const getParams = useParams();
 
 
   //Get ALl datas and dispatch good url Product
   let details = logements.find((logement)=> {
-
     return logement.id === getParams.id
-
   });
   
-
+  //Fake State for Pannel UI
   let annoncePanel = true ;
 
-  
   return (
 
     (details) ? (
     <>
-      {/* <Gallery layout={'annonce'} details={details} /> */}
+      <Gallery layout={'annonce'} details={details} />
       <section className="logement-details">
-          <Product details={details} annoncePanel={annoncePanel} />
+          <Product details={details} annoncePanel={annoncePanel} bookings={bookings} setBookings={setBookings} isBooked={isBooked} setIsBooked={setIsBooked} />
       </section>
     </>
-    ) : ('rien')
-   
+    ) : ('<PageNotFound />')
     
+
     // (details) ? (
-    // <>
-    //   <Gallery layout={'annonce'} details={details} />
-    //   <section className="logement-details">
-    //       <Product details={details} annoncePanel={annoncePanel} bookings={bookings} setBookings={setBookings} isBooked={isBooked} setIsBooked={setIsBooked} />
-    //   </section>
-    // </>
-    // ) : (<PageNotFound />)
-    
+    //   <>
+    //     <Gallery layout={'annonce'} details={details} />
+    //     <section className="logement-details">
+    //         <Product details={details} annoncePanel={annoncePanel} bookings={bookings} setBookings={setBookings} isBooked={isBooked} setIsBooked={setIsBooked} />
+    //     </section>
+    //   </>
+    //   ) : (<PageNotFound />)
   )
 }
 
