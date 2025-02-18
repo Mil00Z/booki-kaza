@@ -5,18 +5,19 @@ import 'src/styles/components/Navigation.scss'
 const Navigation = () => {
 
   const MenuLinks = [
-    {
-      label: "Home",
-      href: "/",
-      pageClasses: "flex items-center gap-2 hover:underline hover:underline-offset-4"},
       {
-        label: "About",
-        href: "/about",
+        label: "Accueil",
+        href: "/",
         pageClasses: "flex items-center gap-2 hover:underline hover:underline-offset-4"
       },
       {
-        label: "Annonce",
-        href: "/annonce/:id",
+        label: "Annonces",
+        href: "/annonce",
+        pageClasses: "flex items-center gap-2 hover:underline hover:underline-offset-4"
+      },
+      {
+        label: "A propos",
+        href: "/about",
         pageClasses: "flex items-center gap-2 hover:underline hover:underline-offset-4"
       },
       {
