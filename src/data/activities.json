@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "title": "Parc de la Villette",
+    "cover": "activites/activity-1.jpg",
+    "description":"Découvrez les trésors cachés de la ville en explorant les ruelles étroites et les places historiques."
+  },
+  {
+    "id": "2",
+    "title": "Port de Plaisance",
+    "cover": "activites/activity-2.jpg",
+    "description":"Partez à la conquête des sommets et admirez la vue imprenable sur la ville et ses environs."
+  },
+  {
+    "id": "3",
+    "title": "Catacombes",
+    "cover": "activites/activity-3.jpg",
+    "description":"Plongez dans l'univers de l'art et de la culture en visitant les musées et les galeries d'art de la ville."
+  },
+  {
+    "id": "4",
+    "title": "Accord Hotel Arena",
+    "cover": "activites/activity-4.jpg",
+    "description":"Évadez-vous dans la nature et découvrez les secrets des forêts et des parcs naturels qui entourent la ville."
+  }
+]
