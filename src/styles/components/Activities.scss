@@ -1,0 +1,30 @@
+#activities {
+  width:100%;
+  padding:var(--padding-common);
+}
+
+.activities-cards {
+  display:flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: 3rem;
+}
+
+.activities-cards > a {
+  display: inline-block;
+  width: 22%;
+}
+
+.activities-cards .card {
+  --paddingCard: 0;
+  height: 380px;
+}
+
+.activities-cards .card-thumbnail {
+  flex-grow:1;
+  height: 80%;
+}
+
+.activities-cards .card-title {
+  margin-block: .6rem;
+}
