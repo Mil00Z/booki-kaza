@@ -42,7 +42,7 @@ const Popularity = () => {
                     <div className="card-txt">
                       <h3 className="card-title">{logement.title}</h3>
                       <p className="card-subtitle">
-                        Nuit à partir de 50<span className="euro">€</span>
+                        Nuit à partir de <span className="euro">50€</span>
                       </p>
                     </div>
                     <div className="card-rating">
