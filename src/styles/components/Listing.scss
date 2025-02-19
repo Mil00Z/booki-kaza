@@ -9,7 +9,7 @@
     margin-block:var(--spacing);
     padding:var(--spacing);
     border-radius: var(--radius);
-    background: #F6F6F6;
+    background: var(--block-bg-color);
   }
 
   &-container{

@@ -39,10 +39,6 @@
 a {
   text-decoration: unset;
   transition: var(--regTransi);
-
-  &:hover{
-    color: var(--third-color);
-  }
 }
 
 
@@ -82,6 +78,13 @@ ul {
   }
 }
 
+i{
+  width: 10px;
+  height: 2px;
+  background: var(--debeug-color-alt);
+  display: block;
+}
+
 
 h1 {
   font-size: 3.2rem;
@@ -97,6 +100,11 @@ h1 {
   font-size: var(--title-font-size);
   font-weight: var(--title-font-weight);
   line-height: var(--title-line-height);
+}
+
+.euro{
+  color:var(--third-color);
+  font-weight:var(--weight-bold);
 }
 
 
