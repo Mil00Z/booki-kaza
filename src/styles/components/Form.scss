@@ -1,0 +1,125 @@
+.search-composant{
+  --items-search-color:#F2F2F2;
+  --filter-bg-color: #DEEBFF;
+  --input-height: 50px;
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--header-spacing);
+  }
+
+
+.search-tool{
+  --input-height:50px;
+  display:flex;
+}
+
+.inputs {
+  height:var(--input-height);
+  padding:.5rem;
+  font-family: var(--title-font-family);
+  font-size:1.125rem;
+  font-weight: 600;
+  line-height: var(--title-line-height);
+  border:1px solid transparent;
+}
+
+.search-icon {
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:60px;
+  height:var(--input-height);
+  padding:.5rem;
+  background:var(--items-search-color);
+  border-color:1px solid var(--items-search-color);
+  border-radius:var(--section-radius) 0 0 var(--section-radius);
+  transition: var(--regTransition);
+}
+
+/* Inputs Search & Submit  */
+#search-entry {
+  width:210px;
+  text-align: center;
+  color:var(--black);
+  border-color:var(--items-search-color);
+}
+
+#search-entry::placeholder {
+  color:var(--black);
+
+}
+
+.search-tool:focus-within .search-icon .fa-location-dot {
+  color:var(--main-color);
+  transform: translateY(-4px);
+}
+
+#search-validate {
+  width:140px;
+  color:var(--white-color);
+  text-align: center;
+  border-radius: 0 var(--section-radius) var(--section-radius) 0;
+  background-color: var(--cta-button-background);
+  cursor:pointer;
+}
+
+.search-filters {
+  --gap:1rem;
+  display:flex;
+  align-items: center;
+  column-gap:1rem;
+}
+
+.search-filters-list {
+  display:flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap:var(--gap);
+  margin:0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.search-filters .section-title {
+  margin-block:0;
+}
+
+.search-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-inline: 1rem;
+  background:var(--white);
+  border:2px solid var(--items-search-color);
+  border-radius: 30px;
+  transition: var(--regTransition);
+}
+
+.search-link > .fa-solid {
+  padding-right: 1rem;
+}
+
+.search-link:hover,
+.search-link.active {
+  background:var(--filter-bg-color);
+}
+
+.search-baseline {
+  margin-block:0 ;
+}
+
+.search-baseline .fa-info {
+  padding-right:.85rem;
+}
+
+.search-baseline .fa-info::before {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: .75rem;
+  border: 1px solid var(--filter-bg-color);
+  /* height: .75rem;
+  width: auto; */
+  border-radius: 50px;
+}
