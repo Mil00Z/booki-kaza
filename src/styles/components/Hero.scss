@@ -1,26 +1,44 @@
 .hero {
-  --layout:"hero";
-  --radius:20px;
-  --op:.65;
+  --layout: "hero";
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height:250px;
-  background :{
-    repeat: no-repeat;
-    position:center;
-    size:cover;
+  
+
+  &.home{
+    margin-block: 2rem var(--header-spacing);
   }
-  border-radius: var(--radius);
-  box-shadow: 3px 3px 6px rgba(0, 0, 0, var(--op));
+
+  &[class*="banner"] {
+    --op: 1;
+    --radius: 0;
+    --type: "banner";
+    --radius: 20px;
+    --op: 0.65;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+    background: {
+      repeat: no-repeat;
+      position: center;
+      size: cover;
+    }
+    border-radius: var(--radius);
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, var(--op));
+
+    
+    .title { 
+      font-size: 3.1rem;
+      color:var(--white-color);
+      text-shadow: 0px 4px 4px rgba(0, 0, 0, .25);
+    }
+  }
+
+
  
 
-  
-  .title { 
-    font-size: 3.1rem;
-    color:var(--white-color);
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, .25);
-  }
-  
+ 
 }
+
+
+
+

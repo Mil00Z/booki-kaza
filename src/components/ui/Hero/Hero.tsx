@@ -31,12 +31,22 @@ const HeroBanner = (props) => {
   
   return (
   <>
-    <div className={`hero banner-${layout}`} style={layout === 'about' ? {backgroundImage:`url(${currentBg.src})`} :
-    {backgroundImage:`linear-gradient(to right, rgba(0, 0, 0, var(--op)) 0%, rgba(0, 0, 0, var(--op)) 100%),url(${currentBg.src})`}}>
-
-    {layout === 'annonces' ? <h1 className="title" data-page={layout}>Chez vous, partout & ailleurs</h1> : null }
-
+    {layout === 'home' ? (
+      <div className={`hero ${layout}`}>
+        <h1 className="title">
+      Trouvez votre hébergement pour des vacances de rêve
+      </h1>    
+    <span className="hero-title_baseline">En plein centre-ville ou en pleine nature</span>
     </div>
+    ) : (
+      <div className={`hero banner-${layout}`} style={layout === 'about' ? {backgroundImage:`url(${currentBg.src})`} :
+      {backgroundImage:`linear-gradient(to right, rgba(0, 0, 0, var(--op)) 0%, rgba(0, 0, 0, var(--op)) 100%),url(${currentBg.src})`}}>
+  
+      {layout === 'annonces' ? <h1 className="title" data-page={layout}>Chez vous, partout & ailleurs</h1> : null }
+  
+      </div>
+    )}
+    
 
   </>
   )
