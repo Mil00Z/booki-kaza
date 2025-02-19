@@ -1,0 +1,40 @@
+.lodges-layout{
+  --gap:2rem;
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: space-between;
+  row-gap: var(--gap);
+  margin-top: 2rem;
+}
+
+.lodges-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap:var(--gap);
+}
+
+.lodges-cards > a {
+  width:30%;
+}
+
+.lodges-cards .card {
+  /* width: 260px; */
+  height:260px;
+}
+
+.lodges-cards .card:hover {
+  --op:.22;
+  transform: translateY(-5px);
+}
+
+.lodges-cards .card-thumbnail {
+  height:60%;
+}
+
+.lodges-cards .card-title {
+  margin-block:.5rem;
+}
+
+.lodges-cards .card-subtitle {
+  margin-block: 0.25rem;
+}
