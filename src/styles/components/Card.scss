@@ -1,6 +1,7 @@
 .card {
   --radius:10px;
   --sizes:325px;
+  --paddingCard: 1.55rem;
   width:var(--sizes);
   height: var(--sizes);
   display: flex; 
@@ -12,6 +13,22 @@
   position: relative;
   overflow: hidden;
   transition: var(--regTransi);
+
+
+  &-row{
+    --sizes:auto;
+    --paddingCard: .3rem;
+    --radius: 20px;
+    --op: .1;
+    flex-direction: row;
+    padding: var(--paddingCard);
+    background-color: white;
+    border: 1px solid var(--filter-bg-color);
+    border-radius: var(--radius);
+    background-blend-mode: unset;
+    filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, var(--op)));
+    will-change: transform;
+  }
 
   &:hover{
     transform: perspective(300px);
@@ -67,6 +84,9 @@
     height:100%;
     object-fit: cover;
   }
+
+
+
 
 
 
