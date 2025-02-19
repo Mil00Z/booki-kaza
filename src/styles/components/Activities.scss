@@ -10,10 +10,10 @@
   row-gap: 3rem;
 }
 
-.activities-cards > a {
-  display: inline-block;
-  width: 22%;
-}
+// .activities-cards > a {
+//   display: inline-block;
+//   width: 22%;
+// }
 
 .activities-cards .card {
   --paddingCard: 0;
@@ -27,4 +27,7 @@
 
 .activities-cards .card-title {
   margin-block: .6rem;
+}
+.activities-cards .card-title{
+  color:var(--black-color);
 }
