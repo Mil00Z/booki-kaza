@@ -6,7 +6,8 @@ $colors : (
   black-color:#000,
   white-color:#FFF,
   debeug-color:#FF00FF,
-  debeug-color-alt:tomato
+  debeug-color-alt:tomato,
+  block-bg-color:#F6F6F6
 );
 
 
@@ -19,6 +20,8 @@ $fonts : (
   weight-bold:700,
   title-font-family:var(--body-font-family),
   title-font-size:1.125rem,
+  title-font-weight:600,
+  title-line-height:1.3
 );
 
 
@@ -26,10 +29,12 @@ $items : (
   cta-button-font-size:1.2rem,
   cta-button-color:var(--white-color),
   cta-button-weight:600,
-  cta-button-background:var(--main-color),
+  cta-button-background:var(--primary-color),
   star-default-color:var(--second-color),
   radius:5px,
-  regTransi:all .26s ease-in-out
+  section-radius:15px,
+  padding-common: 1.25rem,
+  regTransi:all .26s ease-in-out,
 );
 
 
