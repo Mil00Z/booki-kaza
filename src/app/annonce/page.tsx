@@ -1,8 +1,5 @@
 'use client';
 
-import { useContext } from 'react';
-import { DataContext } from '@/app/layout';
-
 import HeroBanner from '@/ui/Hero/Hero'
 import Listing from '@/ui/Listing/Listing'
 
