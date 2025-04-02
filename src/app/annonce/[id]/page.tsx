@@ -1,7 +1,7 @@
 'use client';
 
 import {useContext} from 'react'
-import { DataContext } from 'src/app/layout';
+import { DataContext } from 'src/app/appProvider';
 
 import { useParams } from 'next/navigation';
 
@@ -9,8 +9,6 @@ import { useParams } from 'next/navigation';
 import Gallery from "@/ui/Gallery/Gallery"
 import Product from "@/ui/Product/Product"
 
-// import PageNotFound from "@/app/notfound/page"
-// import UnreachableProduct from "@pages/another/index"
 
 import '@/styles/pages/Annonce.scss'
 

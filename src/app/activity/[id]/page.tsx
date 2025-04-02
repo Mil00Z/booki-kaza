@@ -4,7 +4,7 @@ import {useContext} from 'react'
 import { useParams } from 'next/navigation';
 import Image from 'next/image'
 
-import { DataContext } from 'src/app/layout';
+import { DataContext } from 'src/app/appProvider';
 
 import HeroBanner from '@/components/ui/Hero/Hero';
 // import Gallery from "@/ui/Gallery/Gallery"

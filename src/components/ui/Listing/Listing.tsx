@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useContext } from 'react';
-import { DataContext } from 'src/app/layout';
+import { DataContext } from 'src/app/appProvider';
 
 import Card from '@/components/ui/Card/Card';
 

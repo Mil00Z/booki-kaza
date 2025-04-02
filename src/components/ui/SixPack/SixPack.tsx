@@ -3,7 +3,7 @@ import {useContext} from 'react';
 import Link from "next/link";
 import Image from 'next/image'
 
-import { DataContext } from 'src/app/layout';
+import { DataContext } from 'src/app/appProvider';
 
 import '@/styles/components/Card.scss'
 import '@/styles/components/SixPack.scss'
