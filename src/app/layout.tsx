@@ -1,6 +1,4 @@
-"use client";
-
-import {useState, useEffect, createContext} from 'react';
+import AppProvider from './appProvider';
 
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
@@ -8,17 +6,16 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Header from '@/layout/Header/layout';
 import Footer from '@/layout/Footer/layout';
 
-import logements from '@/data/logements.json';
-import activities from '@/data/activities.json';
-
 //Styles
 import "./globals.css";
 import '@/styles/main.scss';
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
+
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -32,31 +29,29 @@ const geistMono = Geist_Mono({
 // };
 
   
-export const DataContext = createContext(null);
 
 const RootLayout: React.FC<Readonly<{ children: React.ReactNode }>> = ({ children }) => {
 
  
-const [bookings,setBookings] = useState(logements.length);
-const [isBooked, setIsBooked] = useState(false);
+// const [bookings,setBookings] = useState(logements.length);
+// const [isBooked, setIsBooked] = useState(false);
 
 
-useEffect(() => {
+// useEffect(() => {
 
-  if(bookings !== logements.length) {
+//   if(bookings !== logements.length) {
 
-    document.title = `Un nouveau logement a été réservé ! ${bookings} restants`;
-  } else if (bookings === 0) {
-     document.title = `Aucuns logements disponibles !`;
-  }
+//     document.title = `Un nouveau logement a été réservé ! ${bookings} restants`;
+//   } else if (bookings === 0) {
+//      document.title = `Aucuns logements disponibles !`;
+//   }
 
-},[bookings]);
-
+// },[bookings]);
 
 
   return (
 
-    <DataContext.Provider value={{logements,activities,bookings,setBookings,isBooked,setIsBooked}}>
+    <AppProvider >
 
       <html lang="fr">
         
@@ -69,11 +64,10 @@ useEffect(() => {
           <Footer/>
 
         </body>
+
       </html>
 
-    </DataContext.Provider>
-
-    
+    </AppProvider>
 
   );
 
