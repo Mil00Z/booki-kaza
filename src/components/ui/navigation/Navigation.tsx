@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -6,8 +8,6 @@ import 'src/styles/components/Navigation.scss'
 const Navigation = () => {
 
   const pathName = usePathname();
-
-  console.log(pathName);
 
   const MenuLinks = [
       {
