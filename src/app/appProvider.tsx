@@ -2,21 +2,26 @@
 
 import {useState, useEffect,createContext} from 'react';
 
+import { DataContextProps } from 'src/types/datacontext.types';
+
 // Datas
 import logements from '../data/logements.json';
 import activities from '../data/activities.json';
+
+
+export const DataContext = createContext<DataContextProps | undefined>(undefined);
 
 
 interface AppProviderProps {
   children: React.ReactNode;
 }
 
-export const DataContext = createContext(null);
 
 const AppProvider = ({children} : AppProviderProps) => {
 
   const [bookings,setBookings] = useState<number>(logements.length);
   const [isBooked, setIsBooked] = useState<Boolean>(false);
+
 
 
 useEffect(() => {
