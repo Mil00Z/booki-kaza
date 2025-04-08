@@ -12,5 +12,4 @@ export type Logement = {
   location: string;
   equipments: string[];
   tags: string[];
-
 }
