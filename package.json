@@ -3,11 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "devturbo": "next dev --turbopack",
+    
     "dev": "next dev",
+    "devturbo": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "ts-check": "echo 'Starting check...' && tsc --noEmit --skipLibCheck --isolatedModules --jsx react-jsx",
+    "ts-watch": "echo 'Starting watch...' && tsc --watch --noEmit --skipLibCheck --isolatedModules --jsx react-jsx"
   },
   "dependencies": {
     "next": "15.1.7",
