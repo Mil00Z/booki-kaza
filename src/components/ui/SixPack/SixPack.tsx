@@ -1,23 +1,26 @@
-import {useContext} from 'react';
 
 import Link from "next/link";
 import Image from 'next/image'
 
-import { DataContext } from 'src/app/appProvider';
+import { useDataContext } from '@/hooks/useDataContext';
 
-import '@/styles/components/Card.scss'
+//Styles
 import '@/styles/components/SixPack.scss'
+
 
 
 const SixPack = () => {
 
-  const {logements} = useContext(DataContext);
+  const {logements,activities} = useDataContext();
 
-  // let randomIndex = Math.floor(Math.random()* 10);
 
+  if (!logements) {
+    return <div>Les données des hébergements n'ont pas pu être chargées.</div>;
+  }
+
+  //Get 6 first logements
   let sortedLogements = logements.slice(0,6);
 
- 
   return (
     <section id="hebergements" className="block-data">
     <h2 className="section-title">
@@ -46,16 +49,10 @@ const SixPack = () => {
                 </p>
               </div>
               <div className="card-rating">
-                Note de {logement.rating} sur 5
-                <i className="fa-xs fa-solid fa-star" aria-hidden="true"></i>
-                <i className="fa-xs fa-solid fa-star" aria-hidden="true"></i>
-                <i className="fa-xs fa-solid fa-star" aria-hidden="true"></i>
-                <i className="fa-xs fa-solid fa-star" aria-hidden="true"></i>
-                <i
-                  className="fa-xs fa-solid fa-star neutral-star"
-                  aria-hidden="true"
-                ></i>
-                <span className="sr-only">Note de 4 sur 5</span>
+                Note de {logement.rating}/5
+              </div>
+              <div className="card-description">
+                <p>{logement.description}</p>
               </div>
             </div>
           </article>
