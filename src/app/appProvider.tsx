@@ -2,11 +2,11 @@
 
 import {useState, useEffect,createContext} from 'react';
 
-import { DataContextProps } from 'src/types/datacontext.types';
+import { DataContextProps } from '@/types/datacontext.types'
 
 // Datas
-import logements from '../data/logements.json';
-import activities from '../data/activities.json';
+import logements from '@/data/logements.json';
+import activities from '@/data/activities.json';
 
 
 export const DataContext = createContext<DataContextProps | undefined>(undefined);
