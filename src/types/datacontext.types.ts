@@ -5,7 +5,7 @@ export interface DataContextProps {
   logements: Logement[];
   activities: Activity[];
   bookings: number;
-  setBookings: () => void;
+  setBookings: (value: (prev:number) => number) => void;
   isBooked: boolean;
-  setIsBooked: () => void;
+  setIsBooked: (value:boolean) => void;
 }
