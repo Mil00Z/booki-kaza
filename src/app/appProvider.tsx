@@ -20,7 +20,7 @@ interface AppProviderProps {
 const AppProvider = ({children} : AppProviderProps) => {
 
   const [bookings,setBookings] = useState<number>(logements.length);
-  const [isBooked, setIsBooked] = useState<Boolean>(false);
+  const [isBooked, setIsBooked] = useState<boolean>(false);
 
 
 
