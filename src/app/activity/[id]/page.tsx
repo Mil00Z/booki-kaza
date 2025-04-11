@@ -1,27 +1,26 @@
 'use client';
 
-import {useContext} from 'react'
 import { useParams } from 'next/navigation';
 import Image from 'next/image'
 
-import { DataContext } from 'src/app/appProvider';
+import { useDataContext } from '@/hooks/useDataContext';
+import { Activity } from '@/types/activity.types';
 
 import HeroBanner from '@/components/ui/Hero/Hero';
-// import Gallery from "@/ui/Gallery/Gallery"
-// import Product from "@/ui/Product/Product"
 
 
+//Styles
 import '@/styles/pages/Activity.scss'
 
 
 const Annonce = () => {
 
-  const {activities} = useContext(DataContext);
+  const {activities} = useDataContext();
 
   const getParams = useParams();
 
   //Get ALl datas and dispatch good url Product
-  let details = activities.find((activity)=> {
+  let details = activities.find((activity:Activity)=> {
     return activity.id === getParams.id
   });
   
@@ -36,14 +35,9 @@ const Annonce = () => {
         <div className="content">
           <Image src={`/${details.cover}`} alt={details.title} width={600} height={600}/>
           <p className="desc">{details?.description}</p>
-
         </div>
-        
-
       </section>
-     
     </>
-    
   )
 }
 

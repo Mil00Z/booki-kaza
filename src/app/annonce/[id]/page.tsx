@@ -5,23 +5,26 @@ import { DataContext } from 'src/app/appProvider';
 
 import { useParams } from 'next/navigation';
 
+import { useDataContext } from '@/hooks/useDataContext';
+import { Logement } from '@/types/logement.types';
 
 import Gallery from "@/ui/Gallery/Gallery"
 import Product from "@/ui/Product/Product"
 
 
+//Styles
 import '@/styles/pages/Annonce.scss'
 
 
 const Annonce = () => {
 
-  const {logements,bookings, setBookings,isBooked, setIsBooked} = useContext(DataContext);
+  const {logements,bookings, setBookings,isBooked, setIsBooked} = useDataContext();
 
   const getParams = useParams();
 
 
   //Get ALl datas and dispatch good url Product
-  let details = logements.find((logement)=> {
+  let details = logements.find((logement:Logement)=> {
     return logement.id === getParams.id
   });
   
