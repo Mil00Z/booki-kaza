@@ -1,8 +1,10 @@
+import {useState} from 'react';
 
 import Link from "next/link";
 import Image from 'next/image'
 
 import { useDataContext } from '@/hooks/useDataContext';
+import { Logement } from '@/types/logement.types';
 
 //Styles
 import '@/styles/components/SixPack.scss'
@@ -11,16 +13,18 @@ import '@/styles/components/SixPack.scss'
 
 const SixPack = () => {
 
-  const {logements,activities} = useDataContext();
+  const {logements} = useDataContext();
+
+   //Get N first logements
+  const [displayedLogements, setDisplayedLogements] = useState<Logement[]>(logements.slice(0,10));
 
 
   if (!logements) {
     return <div>Les données des hébergements n'ont pas pu être chargées.</div>;
   }
 
-  //Get 6 first logements
-  let sortedLogements = logements.slice(0,6);
-
+ 
+  
   return (
     <section id="hebergements" className="block-data">
     <h2 className="section-title">
@@ -28,7 +32,7 @@ const SixPack = () => {
     </h2>
     <div className="lodges-cards" aria-label="liste des biens à louer">
 
-    {sortedLogements.map((logement,index)=>{
+    {displayedLogements.map((logement : Logement,index)=>{
 
         return(
 

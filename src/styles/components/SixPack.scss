@@ -3,9 +3,18 @@
   --gap:1.65rem;
   width:65%;
   height:fit-content;
+  position: relative;
 }
 
 .hebergements_geoloc {
   margin-inline:5px auto;
+}
+
+.load-more{
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  // align-self: end;
 }
 
