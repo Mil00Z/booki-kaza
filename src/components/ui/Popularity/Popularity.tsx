@@ -1,9 +1,10 @@
-import {useContext} from 'react';
+import { useDataContext } from "@/hooks/useDataContext";
+import { Logement } from "@/types/logement.types";
 
 import Link from "next/link";
 import Image from 'next/image'
 
-import { DataContext } from 'src/app/appProvider';
+
 
 
 import '@/styles/components/Popularity.scss';
@@ -12,11 +13,10 @@ import '@/styles/components/Card.scss';
 
 const Popularity = () => {
 
+  const {logements} = useDataContext();
 
-  const {logements} = useContext(DataContext);
 
-
-  let popularities = logements.filter((logement) =>{
+  let popularities = logements.filter((logement : Logement) =>{
     return logement.rating === '5';
   });
 
@@ -46,7 +46,6 @@ const Popularity = () => {
                       </p>
                     </div>
                     <div className="card-rating">
-                      Note de {logement.rating} sur 5
                       <i className="fa-xs fa-solid fa-star" aria-hidden="true"></i>
                       <i className="fa-xs fa-solid fa-star" aria-hidden="true"></i>
                       <i className="fa-xs fa-solid fa-star" aria-hidden="true"></i>

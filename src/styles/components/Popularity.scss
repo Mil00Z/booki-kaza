@@ -1,6 +1,7 @@
 #populaires {
   --gap: 2rem;
   width: 30%;
+  height:fit-content;
 }
 
 .populaires-cards {
@@ -63,7 +64,8 @@
 
 }
 
-.populaires-cards .card-rating {
-  // margin-bottom: 5px;
+.populaires-cards .card-rating > i {
+  margin-left: 2px;
+  color:var(--primary-color)
 }
 
