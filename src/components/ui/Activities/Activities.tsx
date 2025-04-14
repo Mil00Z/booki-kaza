@@ -1,9 +1,9 @@
-import {useState} from 'react';
 
 import Link from "next/link";
 import Image from 'next/image'
 
 import activities from "@/data/activities.json";
+import type { Activity } from "@/types/activity.types";
 
 import '@/styles/components/Activities.scss';
 
@@ -18,14 +18,14 @@ const Activities = () => {
     <div className="activities-cards" aria-label="liste des activités">
 
 
-    {activities.map((activity,index) => {
+    {activities.map((activity :Activity,index) => {
 
       return ( 
         <Link href={`/activity/${activity.id}`} key={`activity-${index}`}>
         <article className="card card-column">
           <Image
-            src={`/${activity.cover}`}
-            alt="Image du Vieux-Port de Marseille"
+            src={activity.cover ? `/${activity.cover}` :'/image-default.jpg'}
+            alt={activity.title}
             className="card-thumbnail"
             width={400}
             height={600}
