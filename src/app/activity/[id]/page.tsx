@@ -4,7 +4,7 @@ import { useParams } from 'next/navigation';
 import Image from 'next/image'
 
 import { useDataContext } from '@/hooks/useDataContext';
-import { Activity } from '@/types/activity.types';
+import type { Activity } from '@/types/activity.types';
 
 import HeroBanner from '@/components/ui/Hero/Hero';
 
@@ -13,7 +13,7 @@ import HeroBanner from '@/components/ui/Hero/Hero';
 import '@/styles/pages/Activity.scss'
 
 
-const Annonce = () => {
+const Activity = () => {
 
   const {activities} = useDataContext();
 
@@ -31,14 +31,14 @@ const Annonce = () => {
     <>
       <HeroBanner layout={''}/>
       <section className="activity-section">
-        <h1 className="activity title">{details.title}</h1>
+        <h1 className="activity title">{details?.title || 'Activité non trouvée'}</h1>
         <div className="content">
-          <Image src={`/${details.cover}`} alt={details.title} width={600} height={600}/>
-          <p className="desc">{details?.description}</p>
+          <Image src={details?.cover ? `/${details.cover}` : '/image-default.jpg'} alt={details?.title || 'Image par défault'} width={600} height={600}/>
+          <p className="desc">{details?.description || 'Description non trouvée'}</p>
         </div>
       </section>
     </>
   )
 }
 
-export default Annonce
+export default Activity
