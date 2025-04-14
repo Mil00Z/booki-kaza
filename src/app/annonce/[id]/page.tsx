@@ -1,8 +1,5 @@
 'use client';
 
-import {useContext} from 'react'
-import { DataContext } from 'src/app/appProvider';
-
 import { useParams } from 'next/navigation';
 
 import { useDataContext } from '@/hooks/useDataContext';
