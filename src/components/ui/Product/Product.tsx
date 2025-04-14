@@ -1,14 +1,22 @@
+import { Logement } from '@/types/logement.types';
+
 import Notes from '@/ui/Notes/Notes';
 import PanelTube from '@/ui/PanelTube/PanelTube';
 
 import '@/styles/components/Product.scss';
 
+interface ProductProps {
+  details: Logement;
+  annoncePanel: boolean;
+  bookings: number;
+  setBookings: (value: (prev:number) => number) => void;
+  isBooked: boolean;
+  setIsBooked: (value:boolean) => void;
+}
 
-const Product = (props) => {
+const Product = ({details,annoncePanel,bookings,setBookings,isBooked,setIsBooked} : ProductProps) => {
 
-  const {details,annoncePanel,bookings,setBookings,isBooked,setIsBooked} = props
 
-  
   function updateBooking() {
 
     setIsBooked(true);
@@ -16,13 +24,16 @@ const Product = (props) => {
 
   }
 
-  function scrollHeight(e) {
+  function scrollHeight(event: Event) : void {
 
-    if (e.target.classList.contains('panel-container')) {
+    const target = event.target as HTMLElement;
 
-      let dynamicHeight = e.target.scrollHeight;
+    if (target.classList.contains('panel-container')) {
 
-      e.target.closest('.product-panel').style.setProperty('height',`${dynamicHeight}px`);
+     let dynamicHeight = target.scrollHeight;
+
+      (target.closest('.product-panel')as HTMLElement)?.style.setProperty('height',`${dynamicHeight}px`);
+
     }
 
   }
@@ -47,7 +58,7 @@ const Product = (props) => {
       </div>
       <div className='side-right'>
         <p className='product-owner'>{details.host.name}<img src={details.host.picture} alt={details.host.name} className='thumbnail'/></p>
-        <Notes notes={details.rating} />
+        <Notes notes={Number(details.rating)} />
       </div>
       
       <div className='side-bottom'>
