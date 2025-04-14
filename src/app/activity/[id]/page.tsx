@@ -20,7 +20,7 @@ const Activity = () => {
   const getParams = useParams();
 
   //Get ALl datas and dispatch good url Product
-  let details = activities.find((activity:Activity)=> {
+  const details = activities.find((activity:Activity)=> {
     return activity.id === getParams.id
   });
   

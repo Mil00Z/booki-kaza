@@ -5,7 +5,7 @@ import '@/styles/components/Us.scss'
 
 const Us = () =>{
 
-  let softskills = [
+  const softskills = [
     {
       title: "Fiabilité",
       description: "La capacité à être fiable et à tenir ses engagements",

@@ -1,8 +1,5 @@
 'use client';
 
-import Image from "next/image";
-import Link from "next/link";
-
 import CounterElement from "@/components/ui/Counter/CounterElement";
 
 

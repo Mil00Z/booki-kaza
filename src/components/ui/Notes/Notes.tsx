@@ -5,7 +5,7 @@ interface NotesProps{
 const Notes = ({notes = null} : NotesProps) => {
 
 
-  let maxNotations =  5 ;
+  const maxNotations =  5 ;
 
   return (
     

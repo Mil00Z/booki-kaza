@@ -21,12 +21,12 @@ const Annonce = () => {
 
 
   //Get ALl datas and dispatch good url Product
-  let details = logements.find((logement:Logement)=> {
+  const details = logements.find((logement:Logement)=> {
     return logement.id === getParams.id
   });
   
   //Fake State for Pannel UI
-  let annoncePanel = true ;
+  const annoncePanel = true ;
 
   return (
 

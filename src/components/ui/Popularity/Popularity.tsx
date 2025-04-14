@@ -16,7 +16,7 @@ const Popularity = () => {
   const {logements} = useDataContext();
 
 
-  let popularities = logements.filter((logement : Logement) =>{
+  const popularities = logements.filter((logement : Logement) =>{
     return logement.rating === '5';
   });
 

@@ -1,4 +1,4 @@
-import {useState} from 'react';
+// import {useState} from 'react';
 
 import Link from "next/link";
 import Image from 'next/image'
@@ -16,7 +16,8 @@ const SixPack = () => {
   const {logements} = useDataContext();
 
    //Get N first logements
-  const [displayedLogements, setDisplayedLogements] = useState<Logement[]>(logements.slice(0,10));
+   const displayedLogements : Logement[] = logements.slice(0,6);
+  // const [displayedLogements, setDisplayedLogements] = useState<Logement[]>(logements.slice(0,10));
 
 
   if (!logements) {

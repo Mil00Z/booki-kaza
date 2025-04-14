@@ -13,7 +13,7 @@ interface  CardProps {
   setIsBooked: (value:boolean) => void;
 }
 
-const Card = ({logement,bookings,setBookings,isBooked, setIsBooked} : CardProps) => {  
+const Card = ({logement,isBooked} : CardProps) => {  
 
   return (
 

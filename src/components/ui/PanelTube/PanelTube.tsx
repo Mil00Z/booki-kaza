@@ -18,15 +18,15 @@ const contentRef = useRef(null);
 
 function handleClick(event : React.MouseEvent<HTMLDivElement>) {
 
-  let target = event.target as HTMLElement;
-  let targetClass = target.closest('.tube') as HTMLElement;
-  let container = targetClass.querySelector('.panel-container') as HTMLElement;
+  const target = event.target as HTMLElement;
+  const targetClass = target.closest('.tube') as HTMLElement;
+  const container = targetClass.querySelector('.panel-container') as HTMLElement;
 
  
   // Shorthand to check existence
   if (targetClass && container) {
 
-    let maxHeight = container.scrollHeight;
+    const maxHeight = container.scrollHeight;
 
     container.style.setProperty('--max-height',`${maxHeight}px`);
   

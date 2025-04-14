@@ -1,9 +1,12 @@
 import { useState } from 'react';
 
+import Image from 'next/image';
+
+import { Logement } from '@/types/logement.types';
 
 //Styles
 import '@/styles/components/Gallery.scss';
-import { Logement } from '@/types/logement.types';
+
 
 interface GalleryProps {
   details : Logement;
@@ -14,10 +17,10 @@ const Gallery = ({details,layout} : GalleryProps) => {
 
 
   const [currentImgIndex, setCurrentImgIndex] = useState<number>(0);
-  const [isVisible, setVisible] = useState<boolean>(true);
+  // const [isVisible, setVisible] = useState<boolean>(true);
 
   
-  let pictures = details?.pictures || [];
+  const pictures = details?.pictures || [];
 
 
   function goAhead() {
@@ -32,7 +35,7 @@ const Gallery = ({details,layout} : GalleryProps) => {
     }
 
 
-    setVisible(isVisible => !isVisible)
+    // setVisible(isVisible => !isVisible)
   }
 
 
@@ -48,14 +51,14 @@ const Gallery = ({details,layout} : GalleryProps) => {
     }
 
 
-    setVisible(isVisible => !isVisible)
+    // setVisible(isVisible => !isVisible)
   }
 
 
  
 return (
 
-  <section className="gallery">
+  <section className="gallery" data-layout={layout}>
 
     {(pictures.length > 1) ? ( 
        
@@ -73,9 +76,10 @@ return (
     </Fade> */}
 
       
-      <img key={`picture-${currentImgIndex}`} src={pictures[currentImgIndex]} className={`picture`} data-index={currentImgIndex} alt={`photo de l'annonce - ${details.title}`} /> 
+      <Image key={`picture-${currentImgIndex}`} src={pictures[currentImgIndex]} className={`picture`} data-index={currentImgIndex} alt={`photo de l'annonce - ${details.title}`} width={800} height={400} unoptimized= {true} /> 
 
-  
+      {/* <img key={`picture-${currentImgIndex}`} src={pictures[currentImgIndex]} className={`picture`} data-index={currentImgIndex} alt={`photo de l'annonce - ${details.title}`} />  */}
+
     {(pictures.length >1) ? (
        <div className="nav-counter"> <span className="counter">{currentImgIndex + 1}</span>/{pictures.length}</div>
     ) : null}

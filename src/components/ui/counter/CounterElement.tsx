@@ -4,9 +4,9 @@ import { useEffect, useState } from "react";
 
 const CounterElement = () => {
 
-  const [count, setCount] = useState(0);
-  const [message, setMessage] = useState('Click');
-  const [showLabel, setShowLabel] = useState(true);
+  const [count, setCount] = useState<number>(0);
+  const [message, setMessage] = useState<string>('Click');
+  const [showLabel, setShowLabel] = useState<boolean>(true);
 
 
 

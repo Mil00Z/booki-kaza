@@ -1,8 +1,11 @@
+import Image from 'next/image';
+
 import { Logement } from '@/types/logement.types';
 
 import Notes from '@/ui/Notes/Notes';
 import PanelTube from '@/ui/PanelTube/PanelTube';
 
+//Styles
 import '@/styles/components/Product.scss';
 
 interface ProductProps {
@@ -14,7 +17,7 @@ interface ProductProps {
   setIsBooked: (value:boolean) => void;
 }
 
-const Product = ({details,annoncePanel,bookings,setBookings,isBooked,setIsBooked} : ProductProps) => {
+const Product = ({details,annoncePanel,setBookings,isBooked,setIsBooked} : ProductProps) => {
 
 
   function updateBooking() {
@@ -24,19 +27,19 @@ const Product = ({details,annoncePanel,bookings,setBookings,isBooked,setIsBooked
 
   }
 
-  function scrollHeight(event: Event) : void {
+  // function scrollHeight(event: Event) : void {
 
-    const target = event.target as HTMLElement;
+  //   const target = event.target as HTMLElement;
 
-    if (target.classList.contains('panel-container')) {
+  //   if (target.classList.contains('panel-container')) {
 
-     let dynamicHeight = target.scrollHeight;
+  //    const dynamicHeight = target.scrollHeight;
 
-      (target.closest('.product-panel')as HTMLElement)?.style.setProperty('height',`${dynamicHeight}px`);
+  //     (target.closest('.product-panel')as HTMLElement)?.style.setProperty('height',`${dynamicHeight}px`);
 
-    }
+  //   }
 
-  }
+  // }
 
   return (
 
@@ -57,7 +60,7 @@ const Product = ({details,annoncePanel,bookings,setBookings,isBooked,setIsBooked
 
       </div>
       <div className='side-right'>
-        <p className='product-owner'>{details.host.name}<img src={details.host.picture} alt={details.host.name} className='thumbnail'/></p>
+        <p className='product-owner'>{details.host.name}<Image src={details.host.picture} alt={details.host.name} className='thumbnail' width={50} height={50}/></p>
         <Notes notes={Number(details.rating)} />
       </div>
       
