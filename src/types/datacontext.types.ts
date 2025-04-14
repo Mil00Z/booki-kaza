@@ -1,5 +1,5 @@
-import { Logement } from './logement.types';
-import { Activity } from './activity.types';
+import type { Logement } from './logement.types';
+import type { Activity } from './activity.types';
 
 export interface DataContextProps {
   logements: Logement[];
