@@ -1,21 +1,23 @@
 import { useState } from 'react';
 
-// import Fade from '@/components/utils/fade.jsx';
 
+//Styles
 import '@/styles/components/Gallery.scss';
+import { Logement } from '@/types/logement.types';
+
+interface GalleryProps {
+  details : Logement;
+  layout : string;
+}
+
+const Gallery = ({details,layout} : GalleryProps) => {
 
 
-
-const Gallery = (props) => {
-
-  const {details = null} = props
-
-  const [currentImgIndex, setCurrentImgIndex] = useState(0);
-  const [isVisible, setVisible] = useState(true);
+  const [currentImgIndex, setCurrentImgIndex] = useState<number>(0);
+  const [isVisible, setVisible] = useState<boolean>(true);
 
   
   let pictures = details?.pictures || [];
-
 
 
   function goAhead() {
