@@ -1,6 +1,9 @@
-const Notes = (props) => {
+interface NotesProps{
+  notes ? : number | null;
+}
 
-  const {notes = null} = props;
+const Notes = ({notes = null} : NotesProps) => {
+
 
   let maxNotations =  5 ;
 
@@ -10,7 +13,7 @@ const Notes = (props) => {
       {!notes ? (
         <p className="no-notes">Aucune notation disponible</p>
       ) : (
-        Array(maxNotations).fill().map((_, index) => (
+        Array.from({ length: maxNotations },(a,b) => b).map((_, index) => (
             <span key={`${'star-statut'}-${index}`}>
               {index < notes ? (
                 <i className="fa fa-star noted"></i>
@@ -20,7 +23,7 @@ const Notes = (props) => {
             </span>
           ))
       )}
-</div>
+    </div>
   )
 
 
