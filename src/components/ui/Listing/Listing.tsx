@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useContext } from 'react';
-import { DataContext } from 'src/app/appProvider';
+import { useEffect} from 'react';
+import { useDataContext } from '@/hooks/useDataContext';
 
 import Card from '@/components/ui/Card/Card';
 
@@ -11,14 +11,18 @@ import '@/styles/components/Listing.scss'
 
 const Listing = () => {
 
-  const {logements,bookings, setBookings,isBooked, setIsBooked} = useContext(DataContext);
+  const {logements,bookings, setBookings,isBooked, setIsBooked} = useDataContext();
 
 
-  useEffect(() => {
+  // useEffect(() => {
+
+  //   if(bookings !== logements.length) {
+
+  //     alert(`Un nouveau logement a été réservé ! ${bookings} restants`);
+
+  //   }
     
-
-
-  },[bookings]);
+  // },[bookings]);
   
 
   return (
