@@ -1,6 +1,6 @@
 import {useContext} from 'react';
 import { DataContext } from 'src/app/appProvider';
-import { DataContextProps } from "@/types/datacontext.types";
+import type { DataContextProps } from "@/types/datacontext.types";
 
 
 export const useDataContext = () : DataContextProps => {
