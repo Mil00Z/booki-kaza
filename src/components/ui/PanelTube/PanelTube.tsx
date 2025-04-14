@@ -1,18 +1,26 @@
-import { useRef } from 'react'
+import { useRef } from 'react';
+import { Logement } from '@/types/logement.types';
+
 import '@/styles/components/PanelTube.scss'
 
-const PanelTube = (props) => {
 
-const {details,title,description,annoncePanel} = props
+interface PanelTubeProps {
+  details ?: Logement | null;
+  title ?: string;
+  description ?: string;
+  annoncePanel: boolean;
+}
+
+const PanelTube = ({details = null,title,description,annoncePanel} : PanelTubeProps) => {
 
 const contentRef = useRef(null);
 
 
-function handleClick(event) {
+function handleClick(event : React.MouseEvent<HTMLDivElement>) {
 
-  let target = event.target;
-  let targetClass = target.closest('.tube');
-  let container = targetClass.querySelector('.panel-container');
+  let target = event.target as HTMLElement;
+  let targetClass = target.closest('.tube') as HTMLElement;
+  let container = targetClass.querySelector('.panel-container') as HTMLElement;
 
  
   // Shorthand to check existence
@@ -29,20 +37,19 @@ function handleClick(event) {
 }
 
 
-
   return (
     annoncePanel ? (
     <>
-      <div className='product-panel tube' onClick={() => handleClick(event)}>
+      <div className='product-panel tube' onClick={(event) => handleClick(event)}>
         <h3 className='title'>Description <i className="fa-solid fa-angle-up"></i></h3>
         <p className='panel-container' >
-            {details.description}
+        {details ? details.description : "Aucune description disponible"}
         </p>
       </div>
-      <div className="product-panel tube" onClick={ () => handleClick(event)}>
+      <div className="product-panel tube" onClick={(event) => handleClick(event)}>
           <h3 className='title'>Equipements <i className="fa-solid fa-angle-up"></i></h3>
           <ul className='panel-container'>
-          {details.equipments.map((equipement,index)=>{
+          {details?.equipments.map((equipement : string,index : number)=>{
 
               return (<li key={`${equipement}-${index}`}>{equipement}</li>)
               }) 
@@ -50,7 +57,7 @@ function handleClick(event) {
             }
           </ul>
       </div>
-    </>) : (<div className='soft-skill tube' onClick={ () => handleClick(event)}>
+    </>) : (<div className='soft-skill tube' onClick={ (event) => handleClick(event)}>
   
           <>
             <h3 className='title'>{title} <i className="fa-solid fa-angle-up"></i></h3>
