@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import 'src/styles/components/Navigation.scss'
+import 'src/styles/components/navigation.scss'
 
 const Navigation = () => {
 
