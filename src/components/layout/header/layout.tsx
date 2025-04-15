@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import Navigation from '@/ui/Navigation/Navigation';
+import Navigation from '@/ui/navigation/Navigation';
 
 import logo from "@/public/kasa-logo.svg";
 
