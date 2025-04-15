@@ -6,7 +6,7 @@ import FormSearch from '@/ui/Form/Form';
 import DataBento from '@/ui/Bento/Bento';
 
 
-import '@/styles/pages/Home.scss'
+import 'src/styles/pages/Home.scss';
 
 
 function Home() {

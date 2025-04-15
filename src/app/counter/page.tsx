@@ -1,6 +1,8 @@
 'use client';
+import Image from "next/image";
+import logo from "@/public/next.svg";
 
-import CounterElement from "@/components/ui/Counter/CounterElement";
+import CounterElement from 'src/components/ui/Counter/CounterElement';
 
 
 const CounterPage = () => {
@@ -11,7 +13,14 @@ const CounterPage = () => {
 
       <div className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
 
-       <CounterElement />
+        <Image
+          src={logo}
+          alt="Logo NextJs"
+          width={210}
+          height={70}
+        />
+
+        <CounterElement />
       
       </div>
 

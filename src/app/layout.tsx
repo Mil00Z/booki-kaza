@@ -4,8 +4,8 @@ import type { Metadata, Viewport } from "next";
 
 import { Geist, Geist_Mono } from "next/font/google";
 
-import Header from '@/layout/Header/layout';
-import Footer from '@/layout/Footer/layout';
+import Header from 'src/components/layout/Header/layout';
+import Footer from 'src/components/layout/Footer/layout';
 
 //Styles
 import "./globals.css";
