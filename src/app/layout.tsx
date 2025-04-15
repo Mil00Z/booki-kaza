@@ -4,12 +4,12 @@ import type { Metadata, Viewport } from "next";
 
 import { Geist, Geist_Mono } from "next/font/google";
 
-import Header from 'src/components/layout/Header/layout';
-import Footer from 'src/components/layout/Footer/layout';
+import Header from "@/layout/header/layout";
+import Footer from "@/layout/footer/layout";
 
 //Styles
 import "./globals.css";
-import '@/styles/main.scss';
+import "@/styles/main.scss";
 
 
 const geistSans = Geist({

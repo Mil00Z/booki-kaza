@@ -2,7 +2,7 @@
 import Image from "next/image";
 import logo from "@/public/next.svg";
 
-import CounterElement from 'src/components/ui/Counter/CounterElement';
+import CounterElement from "src/components/ui/counter/CounterElement";
 
 
 const CounterPage = () => {
