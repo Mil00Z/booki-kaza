@@ -13,7 +13,7 @@
     "ts-watch": "echo 'Starting watch...' && tsc --watch --noEmit --skipLibCheck --isolatedModules --jsx react-jsx"
   },
   "dependencies": {
-    "next": "15.4.9",
+    "next": "15.4.10",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
